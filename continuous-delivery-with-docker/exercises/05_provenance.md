@@ -8,7 +8,7 @@ add meaningful metadata about the image.
 The first, and biggest, problem is that we've implicitly used the "latest" tag
 when building our image. The most striking problem with this is that it makes
 rolling back difficult or impossible, as the previous image had exactly the same
-name. Drone defines a lot of useful environment variables that we could as our
+name. Drone defines a lot of useful environment variables that we could use as our
 tag, which you can see at _http://readme.drone.io/usage/environment-reference/_.
 
 In this case, we'll use the `DRONE_COMMIT_SHA`, another possible candidate is
