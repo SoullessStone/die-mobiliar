@@ -69,23 +69,14 @@ kubectl create -f configs/service.yaml
 ```
 
 ---
-### Get the Node IP
-
-```
-kubectl describe pod hello-node
-```
-
-Find the node your pod is running on
-
-```
-kubectl describe nodes YOUR_NODE_ID
-```
-
-Find your External IP
 
 ### Query the **Service**
 
 Use the IP of any of your nodes.
+
+```
+kubectl describe nodes
+```
 
 ```
 curl -i [cluster-node-ip]:30080

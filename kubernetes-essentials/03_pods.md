@@ -30,7 +30,7 @@ In this lab you will:
 
 ### Deploy application to Kubernetes
 ```
-kubectl run hello-node --image=nginx:1.12 --port=80
+kubectl run hello-node --image=muellermich/hello-node:v1 --port=80
 
 deployment "hello-node" created
 ```
@@ -75,9 +75,9 @@ metadata:
 spec:
   containers:
     - name: hello-node
-      image: nginx:1.12
+      image: muellermich/hello-node:v1
       ports:
-        - containerPort: 80
+        - containerPort: 8080
 ```
 
 ---
@@ -134,7 +134,7 @@ Hello World!
 
 ### Do it yourself
 * Create an `nginx.conf` which returns a  
-`200 "Hello Kiwi"`.
+`200 "Hello Mobi"`.
 * Create a custom Nginx image.
 * Build the container.
 * Create a **Pod** manifest using the image.

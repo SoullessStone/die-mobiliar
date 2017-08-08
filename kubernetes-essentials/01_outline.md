@@ -11,3 +11,4 @@ revealOptions:
 * [Pods](./03_pods.md)
 * [Services](./04_services.md)
 * [Deployments](./05_deployments.md)
+* [Dashboard](./06_userinterface.md)

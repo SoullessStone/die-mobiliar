@@ -153,7 +153,7 @@ service "hello" created
 deployment "hello" created
 ```
 
-This creates a new **Deployment** and a service of **type:LoadBalancer**. A random high port will be allocated to which we can connect.
+This creates a new **Deployment** and a service of **type:LoadBalancer**.
 
 ---
 

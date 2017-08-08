@@ -44,7 +44,7 @@ spec:
     spec:
       containers:
       - name: hello-node
-        image: nginx:1.12
+        image: muellermich/hello-node:v1
         ports:
         - containerPort: 8080
 ```
@@ -171,9 +171,9 @@ spec:
       labels:
         app: hello-node
     spec:
-      containers:   
+      containers:
       - name: hello-node
-        image: nginx:1.13
+        image: muellermich/hello-node:v1
         ports:
         - containerPort: 8080
 ```

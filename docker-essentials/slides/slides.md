@@ -24,7 +24,7 @@ You should leave here knowing:
  - Basic Linux knowledge
    - We will not cover Windows containers
      - but you can use the Docker Toolbox on Windows
- - A laptop with Docker installed
+ - A laptop with a ssh-client
    - OR -
  - A web browser and wifi access
    -  https://play-with-docker.com
