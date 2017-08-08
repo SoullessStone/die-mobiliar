@@ -17,7 +17,7 @@ Add the following to `.drone.yml`:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
       - docker login -u <username> -p $PASS
-      - docker push <username>/example-webserver
+      - docker push <username>/go-example-webserver
 ```
 
 Replace `<username>` with your username on the Hub.

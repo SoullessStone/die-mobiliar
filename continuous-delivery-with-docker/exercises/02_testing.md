@@ -17,7 +17,7 @@ Add the following stage to `.drone.yml`:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker run <username>/example-webserver /test.sh
+      - docker run <username>/go-example-webserver /test.sh
 ```
 
 Make sure you replace `<username>` with your Github username.

@@ -14,8 +14,8 @@ Now add the following stage to `.drone.yml`:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker pull <username>/example-webserver
-      - docker stack deploy -c ./docker-compose.yml example-webserver
+      - docker pull <username>/go-example-webserver
+      - docker stack deploy -c ./docker-compose.yml go-example-webserver
 ```
 
 The first command will pull the image we pushed earlier. Technically this step

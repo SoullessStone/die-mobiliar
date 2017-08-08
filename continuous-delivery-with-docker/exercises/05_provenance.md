@@ -21,14 +21,14 @@ pipeline:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker build -t <username>/example-webserver:$DRONE_COMMIT_SHA .
+      - docker build -t <username>/go-example-webserver:$DRONE_COMMIT_SHA .
 
   test:
     image: docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker run <username>/example-webserver:$DRONE_COMMIT_SHA /test.sh
+      - docker run <username>/go-example-webserver:$DRONE_COMMIT_SHA /test.sh
 
   push:
     image: docker
@@ -38,17 +38,17 @@ pipeline:
       - PASS=${HUB_PASS}
     commands:
       - docker login -u <username> -p $PASS
-      - docker push <username>/example-webserver:$DRONE_COMMIT_SHA
+      - docker push <username>/go-example-webserver:$DRONE_COMMIT_SHA
 
   deploy:
     image: docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - docker pull <username>/example-webserver:$DRONE_COMMIT_SHA
-      - docker tag <username>/example-webserver:$DRONE_COMMIT_SHA 
-               <username>/example-webserver:production
-      - docker stack deploy -c ./docker-compose.yml example-webserver
+      - docker pull <username>/go-example-webserver:$DRONE_COMMIT_SHA
+      - docker tag <username>/go-example-webserver:$DRONE_COMMIT_SHA 
+               <username>/go-example-webserver:production
+      - docker stack deploy -c ./docker-compose.yml go-example-webserver
 ```
 
 The changes are to add the `$DRONE_COMMIT_SHA` when building, running and
@@ -61,7 +61,7 @@ version: '3'
                                                                                 
 services:                                                                       
   server:                                                                       
-    image: <username>/example-webserver:production
+    image: <username>/go-example-webserver:production
     ports:                                                                      
       - "8080:8080"  
 ```
@@ -80,7 +80,7 @@ Finally, we can also add some labels by updating the build step:
          --label org.label-schema.vcs-ref=$DRONE_COMMIT_SHA
          --label build-number=$DRONE_BUILD_NUMBER
          --label build-date="$(date)"
-         -t <username>/example-webserver:$DRONE_COMMIT_SHA .
+         -t <username>/go-example-webserver:$DRONE_COMMIT_SHA .
 
 ```
 
